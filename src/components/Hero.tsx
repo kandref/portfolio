@@ -25,6 +25,8 @@ export default function Hero() {
           <div className="flex justify-center gap-4 flex-wrap">
             <a
               href="https://github.com/kandref"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-accent-green hover:bg-[#2ea043] text-white font-semibold px-6 py-3 rounded-lg transition-colors"
             >
               <FontAwesomeIcon icon={faGithub} className="w-5 h-5" />
