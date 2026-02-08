@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Hero() {
   return (
@@ -31,6 +31,15 @@ export default function Hero() {
             >
               <FontAwesomeIcon icon={faGithub} className="w-5 h-5" />
               Visit My GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/kurnia-andre-febrian/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#0077B5] hover:bg-[#006097] text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+            >
+              <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" />
+              LinkedIn
             </a>
             <a
               href="/cv-kurnia-andre-febrian.pdf"
