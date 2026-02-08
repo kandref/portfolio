@@ -18,6 +18,7 @@ const navItems = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +26,27 @@ export default function Navbar() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = navItems.map((item) => item.href.replace("#", ""));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-20% 0px -60% 0px" }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const handleNavClick = (href: string) => {
@@ -59,19 +81,29 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(item.href);
-                }}
-                className="px-3 py-2 text-sm text-text-muted hover:text-accent-blue transition-colors rounded-lg hover:bg-bg-card"
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.replace("#", "");
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.href);
+                  }}
+                  className={`relative px-3 py-2 text-sm transition-colors rounded-lg ${
+                    isActive
+                      ? "text-accent-blue bg-bg-card"
+                      : "text-text-muted hover:text-accent-blue hover:bg-bg-card"
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4/5 h-0.5 bg-accent-blue rounded-full" />
+                  )}
+                </a>
+              );
+            })}
             <a
               href="#contact"
               onClick={(e) => {
@@ -103,19 +135,26 @@ export default function Navbar() {
           }`}
         >
           <div className="flex flex-col gap-1">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(item.href);
-                }}
-                className="px-3 py-2 text-sm text-text-muted hover:text-accent-blue transition-colors rounded-lg hover:bg-bg-card"
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.replace("#", "");
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.href);
+                  }}
+                  className={`px-3 py-2 text-sm transition-colors rounded-lg ${
+                    isActive
+                      ? "text-accent-blue bg-bg-card border-l-2 border-accent-blue"
+                      : "text-text-muted hover:text-accent-blue hover:bg-bg-card"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
             <a
               href="#contact"
               onClick={(e) => {
