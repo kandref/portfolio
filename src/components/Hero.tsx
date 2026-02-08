@@ -33,7 +33,7 @@ export default function Hero() {
               Visit My GitHub
             </a>
             <a
-              href="https://www.linkedin.com/in/kurnia-andre-febrian/"
+              href="https://www.linkedin.com/in/kurniaandref6/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#0077B5] hover:bg-[#006097] text-white font-semibold px-6 py-3 rounded-lg transition-colors"
