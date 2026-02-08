@@ -154,15 +154,15 @@ export default function Projects() {
         <span className="border-b-2 border-gray-600 pb-2">GitHub Projects</span>
       </h2>
       <p className="text-center text-text-main max-w-3xl mx-auto mb-10 leading-relaxed">
-        Berakar dari latar belakang <span className="text-accent-blue font-medium">Fisika Teoretis</span> dan
-        pengalaman <span className="text-accent-blue font-medium">3+ tahun di Business Intelligence</span>,
-        repositori GitHub saya mencerminkan perjalanan saya dalam dunia data — mulai dari
-        dasar-dasar <span className="text-accent-green font-medium">Python</span> &{" "}
-        <span className="text-accent-green font-medium">R</span>, analisis statistik,
-        hingga pembuatan dashboard interaktif dengan{" "}
+        Rooted in a <span className="text-accent-blue font-medium">Theoretical Physics</span> background
+        with <span className="text-accent-blue font-medium">3+ years in Business Intelligence</span>,
+        my GitHub repositories reflect my journey in the world of data — from
+        the fundamentals of <span className="text-accent-green font-medium">Python</span> &{" "}
+        <span className="text-accent-green font-medium">R</span>, statistical analysis,
+        to building interactive dashboards with{" "}
         <span className="text-accent-green font-medium">Power BI</span>.
-        Setiap proyek dibuat tidak hanya sebagai portofolio, tetapi juga sebagai materi
-        pembelajaran yang bisa diakses siapa saja.
+        Each project is built not only as a portfolio piece, but also as a learning
+        resource accessible to everyone.
       </p>
 
       {loading ? (
