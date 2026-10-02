@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Archivo, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-// FontAwesome config
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-config.autoAddCss = false;
-
-const inter = Inter({
+const sans = Archivo({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
+  variable: "--font-sans",
+});
+
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
-  title: "Kurnia Andre Febrian | Data Analyst & Business Intelligence",
+  title: "Kurnia Andre Febrian — Business Intelligence Developer",
   description:
-    "Portfolio of Kurnia Andre Febrian - Data Analyst & Microsoft Fabric Enthusiast",
+    "Power BI on BigQuery, Microsoft Fabric and the cloud jobs around them. BI developer at Eigerindo, physics graduate.",
 };
 
 export default function RootLayout({
@@ -24,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
+      <body className="font-sans">{children}</body>
     </html>
   );
 }
