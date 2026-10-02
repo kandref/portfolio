@@ -2,23 +2,24 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        "bg-dark": "#0d1117",
-        "bg-card": "#161b22",
-        "text-main": "#c9d1d9",
-        "text-muted": "#8b949e",
-        "accent-blue": "#58a6ff",
-        "accent-green": "#238636",
-        "border-color": "#30363d",
+        paper: "var(--paper)",
+        ink: "var(--ink)",
+        muted: "var(--muted)",
+        rule: "var(--rule)",
+        signal: "var(--signal)",
       },
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
+        sans: ["var(--font-sans)", "Helvetica Neue", "Arial", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+      },
+      maxWidth: {
+        sheet: "76rem",
       },
     },
   },

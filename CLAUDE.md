@@ -1,56 +1,19 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Static one-page portfolio. Next.js 15 App Router, TypeScript, Tailwind CSS 3. No icon library.
 
-## Project Overview
-
-This is a static personal portfolio website for a Data Analyst, built with Next.js 15, TypeScript, and Tailwind CSS.
-
-## Development Commands
+## Commands
 
 ```bash
-npm run dev    # Start development server (http://localhost:3000)
-npm run build  # Build for production
-npm run start  # Start production server
-npm run lint   # Run ESLint
+npm run dev    # http://localhost:3000
+npm run build
+npm run lint
 ```
 
-## Architecture
+## Conventions
 
-- **Next.js 15** with App Router
-- **TypeScript** for type safety
-- **Tailwind CSS** for styling
-- **FontAwesome** for icons
-- **Google Fonts** (Inter) via next/font
-
-## Project Structure
-
-```
-./
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx      # Root layout with fonts & metadata
-│   │   ├── page.tsx        # Main page (imports all sections)
-│   │   └── globals.css     # Tailwind directives + base styles
-│   └── components/
-│       ├── Hero.tsx        # Profile image, name, CTA buttons
-│       ├── About.tsx       # About me paragraph
-│       ├── TechStack.tsx   # Tech icons grid
-│       ├── Projects.tsx    # Portfolio project cards
-│       └── Footer.tsx      # Social links & copyright
-├── public/
-│   ├── foto-kurnia-andre-f.jpg
-│   └── cv-kurnia-andre-febrian.pdf
-└── tailwind.config.ts      # Custom theme colors
-```
-
-## Theme Colors
-
-Custom colors in `tailwind.config.ts`:
-- `bg-dark`: #0d1117
-- `bg-card`: #161b22
-- `text-main`: #c9d1d9
-- `text-muted`: #8b949e
-- `accent-blue`: #58a6ff
-- `accent-green`: #238636
-- `border-color`: #30363d
+- All copy and facts live in `src/data/content.ts`. Keep them in sync with the CV in `public/`.
+- Design direction is a Swiss data sheet: 12-column grid, numbered sections, hairline rules, one grotesque (Archivo) plus IBM Plex Mono for dates, labels and stacks. No cards, gradients, shadows or icons.
+- Colours are CSS variables in `globals.css` (`--paper`, `--ink`, `--muted`, `--rule`, `--signal`), exposed to Tailwind as `paper`, `ink`, `muted`, `rule`, `signal`. `signal` (red) is for emphasis only: section numbers, current-job marker, link hover, focus ring.
+- Work at the employer is described generically: no internal system names, table names or business numbers.
+- This is the personal `kandref` GitHub account. Commit as `kandref <kandref@users.noreply.github.com>`.
