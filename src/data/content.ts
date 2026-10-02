@@ -77,7 +77,7 @@ export const jobs: Job[] = [
     company: "PT Mitra Talenta Group (CELERATES)",
     role: "Business Intelligence Developer",
     points: [
-      "Built 3 Power BI dashboards and supported 2 more for client PT Mitra Solusi Telematika: Activity Based Costing, Innovation Funnel, KPI & Incentive, Table of Duty.",
+      "Built 3 Power BI dashboards and supported 2 more for client PT Mitra Solusi Telematika (listed under Projects).",
       "Ran data warehouse batches in Pentaho Data Integration and handled data anomaly and discrepancy tickets.",
       "Mentored 23 students in the Kampus Merdeka certified independent study programme.",
     ],
@@ -98,6 +98,52 @@ export const jobs: Job[] = [
     role: "Laboratory Assistant, Physics",
     points: [
       "Ran physics practicum sessions with lecturers and reported on student progress.",
+    ],
+  },
+];
+
+export interface WorkProject {
+  period?: string;
+  name: string;
+  note: string;
+}
+
+export interface WorkGroup {
+  label: string;
+  items: WorkProject[];
+}
+
+export const workProjects: WorkGroup[] = [
+  {
+    label: "PT Eigerindo MPI · Jun 2025 – present",
+    items: [
+      { name: "Retail associate productivity & incentive dashboard", note: "DirectQuery on BigQuery, dynamic RLS, incentive logic in DAX" },
+      { name: "Daily sales achievement dashboard", note: "Sales against target by store, branch and region" },
+      { name: "Store, product and brand performance dashboards", note: "For regional and branch managers" },
+      { name: "Billing and receivables dashboard", note: "ERP finance and sales data" },
+      { name: "Profitability and direct cost dashboards", note: "Cost and margin views for management" },
+      { name: "IT service desk SLA dashboard", note: "SLA leaderboard and ticket drill-down for the IT division" },
+      { name: "Employee discount eligibility check", note: "HR master data against POS transactions; flags discounts used by inactive staff" },
+      { name: "Voucher transaction reconciliation", note: "Matching voucher records between POS and ERP" },
+      { name: "Fabric capacity autoscaler", note: "Cloud Run service with a monthly usage and cost email" },
+      { name: "Scheduled report delivery", note: "BigQuery to Excel to email; the daily sales report runs this way" },
+      { name: "Version control for Power BI", note: "17 projects moved to PBIP in Git with tagged releases" },
+    ],
+  },
+  {
+    label: "CELERATES · client PT Mitra Solusi Telematika",
+    items: [
+      { period: "Sep 2023 – Jun 2025", name: "Table of Duty Dashboard", note: "Developed" },
+      { period: "Jul 2022 – Jun 2025", name: "KPI and Incentive Dashboard Funnel", note: "Support and issue handling" },
+      { period: "Aug – Sep 2022", name: "Innovation Funnel Dashboard", note: "Developed and supported" },
+      { period: "Feb – Oct 2022", name: "Activity Based Costing Dashboard", note: "Developed" },
+      { period: "Feb – Mar 2022", name: "DBS Archiving Phase 2", note: "Data warehouse archiving" },
+    ],
+  },
+  {
+    label: "PT Tunas Dwipa Matra",
+    items: [
+      { period: "Apr – Jul 2021", name: "Customer Profile and Repeat Order Dashboard", note: "Power BI and Tableau" },
     ],
   },
 ];

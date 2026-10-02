@@ -7,6 +7,7 @@ import {
   spec,
   now,
   jobs,
+  workProjects,
   projects,
   talks,
   tools,
@@ -132,9 +133,36 @@ export default function Home() {
         </Section>
 
         <Section id="projects" index="03" title="Projects">
-          <p className="mb-8 max-w-[60ch] text-muted">
-            Personal work, all public on GitHub. The physics ones come from my
-            thesis and the problems I still find interesting.
+          {workProjects.map((group) => (
+            <div key={group.label} className="mb-10">
+              <h3 className="mb-3 font-mono text-xs uppercase tracking-wide text-muted">
+                {group.label}
+              </h3>
+              <ol className="divide-y divide-rule border-y border-rule">
+                {group.items.map((item) => (
+                  <li key={item.name} className="grid grid-cols-1 gap-y-1 py-3 md:grid-cols-9 md:gap-x-6">
+                    {item.period && (
+                      <span className="font-mono text-sm tabular-nums text-muted md:col-span-2">
+                        {item.period}
+                      </span>
+                    )}
+                    <span className={`font-semibold ${item.period ? "md:col-span-3" : "md:col-span-4"}`}>
+                      {item.name}
+                    </span>
+                    <span className={`text-muted ${item.period ? "md:col-span-4" : "md:col-span-5"}`}>
+                      {item.note}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))}
+          <h3 className="mb-1 font-mono text-xs uppercase tracking-wide text-muted">
+            Personal · GitHub
+          </h3>
+          <p className="mb-3 max-w-[60ch] text-muted">
+            The physics ones come from my thesis and the problems I still find
+            interesting.
           </p>
           <ol className="divide-y divide-rule border-y border-rule">
             {projects.map((project) => (

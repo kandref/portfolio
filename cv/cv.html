@@ -8,7 +8,7 @@
 <style>
   @page { size: A4; margin: 16mm 16mm 15mm; }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: "Archivo", Arial, sans-serif; font-size: 9.6pt; line-height: 1.42; color: #141414; }
+  body { margin: 0; font-family: "Archivo", Arial, sans-serif; font-size: 9.6pt; line-height: 1.4; color: #141414; word-spacing: 0.06em; }
   .mono { font-family: "IBM Plex Mono", Consolas, monospace; }
   a { color: inherit; text-decoration: none; }
   header { border-bottom: 1.5pt solid #141414; padding-bottom: 9pt; margin-bottom: 4pt; }
@@ -35,6 +35,9 @@
   td { padding: 1.6pt 0; vertical-align: top; }
   td.y { width: 19mm; font-size: 8.2pt; color: #555551; }
   td.by { text-align: right; color: #555551; white-space: nowrap; padding-left: 8pt; }
+  .grp { font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.05em; color: #555551; margin: 0 0 2pt; }
+  .grp ~ .grp { margin-top: 7pt; }
+  td.p { width: 37mm; font-size: 8.2pt; color: #555551; white-space: nowrap; }
   .skills td.k { width: 21mm; font-size: 8.2pt; color: #555551; }
 </style>
 </head>
@@ -61,9 +64,7 @@
         <li>Build and maintain Power BI dashboards that regional and branch managers across Indonesia use for sales, store performance and incentive tracking.</li>
         <li>Moved heavy retail models to DirectQuery on BigQuery. Row-level security reads one master access table, so changing who sees which region is a table update instead of a model edit.</li>
         <li>Implemented Microsoft Fabric for ingestion, transformation and semantic models alongside the BigQuery warehouse.</li>
-        <li>Wrote a Cloud Run service that sizes the Fabric capacity on a schedule (smaller overnight, standard in working hours, larger on request), logs each change and emails a monthly summary of hours per size and estimated cost.</li>
-        <li>Automated recurring reports as scheduled Python jobs that query BigQuery, build the Excel file and email it; the daily sales report runs this way.</li>
-        <li>Moved 17 Power BI projects from manual backup folders into Git (PBIP/TMDL), with a standard repo layout, changelog and a tag for every published version.</li>
+        <li>Built the jobs around the reports: Fabric capacity autoscaling, scheduled report delivery and Git versioning for 17 Power BI projects (see Work projects).</li>
         <li>Standardised visual templates so reports look and behave the same across regions.</li>
       </ul>
       <p class="stack mono">Power BI, DAX, Power Query, BigQuery SQL, Microsoft Fabric, Python, FastAPI, Cloud Run, Cloud Scheduler, Git, PowerShell</p>
@@ -71,8 +72,8 @@
     <div class="item">
       <div class="head"><span><b>Business Intelligence Developer</b> · PT Mitra Talenta Group (CELERATES)</span><span class="date mono">Feb 2022 – Jun 2025</span></div>
       <ul>
-        <li>Built 3 Power BI dashboards and supported 2 more for client PT Mitra Solusi Telematika: Activity Based Costing, Innovation Funnel, KPI &amp; Incentive Funnel, Table of Duty.</li>
-        <li>Ran data warehouse batches in Pentaho Data Integration; DBS Archiving phase 2 (Feb – Mar 2022).</li>
+        <li>Built 3 Power BI dashboards and supported 2 more for client PT Mitra Solusi Telematika (listed under Work projects).</li>
+        <li>Ran data warehouse batches in Pentaho Data Integration.</li>
         <li>Handled data anomaly, discrepancy and enhancement tickets.</li>
         <li>Mentored students in the Kampus Merdeka certified independent study programme, Data Analytics &amp; BI track (batch 4: 23 students; batch 7).</li>
       </ul>
@@ -91,6 +92,38 @@
         <li>Ran physics practicum sessions with lecturers, maintained lab equipment and reported on student progress.</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<section>
+  <h2>Work projects</h2>
+  <div>
+  <p class="grp mono">PT Eigerindo MPI · Jun 2025 – present</p>
+  <table class="cp">
+    <tr><td colspan="2"><b>Retail associate productivity &amp; incentive dashboard</b> — DirectQuery on BigQuery, dynamic RLS, incentive logic in DAX</td></tr>
+    <tr><td colspan="2"><b>Daily sales achievement dashboard</b> — sales against target by store, branch and region</td></tr>
+    <tr><td colspan="2"><b>Store, product and brand performance dashboards</b> — for regional and branch managers</td></tr>
+    <tr><td colspan="2"><b>Billing and receivables dashboard</b> — ERP finance and sales data</td></tr>
+    <tr><td colspan="2"><b>Profitability and direct cost dashboards</b> — cost and margin views for management</td></tr>
+    <tr><td colspan="2"><b>IT service desk SLA dashboard</b> — SLA leaderboard and ticket drill-down for the IT division</td></tr>
+    <tr><td colspan="2"><b>Employee discount eligibility check</b> — HR master data against POS transactions, flags discounts used by inactive staff</td></tr>
+    <tr><td colspan="2"><b>Voucher transaction reconciliation</b> — matching voucher records between POS and ERP</td></tr>
+    <tr><td colspan="2"><b>Fabric capacity autoscaler</b> — Cloud Run service: smaller capacity overnight, standard in working hours, larger on request; monthly usage and cost email</td></tr>
+    <tr><td colspan="2"><b>Scheduled report delivery</b> — Python jobs on Cloud Run query BigQuery, build the Excel file and email it; the daily sales report runs this way</td></tr>
+    <tr><td colspan="2"><b>Version control for Power BI</b> — 17 projects moved from backup folders to PBIP in Git, with changelogs and tagged releases</td></tr>
+  </table>
+  <p class="grp mono">CELERATES · client PT Mitra Solusi Telematika</p>
+  <table class="cp">
+    <tr><td class="p mono">Sep 2023 – Jun 2025</td><td><b>Table of Duty Dashboard</b> — developed</td></tr>
+    <tr><td class="p mono">Jul 2022 – Jun 2025</td><td><b>KPI and Incentive Dashboard Funnel</b> — support and issue handling</td></tr>
+    <tr><td class="p mono">Aug – Sep 2022</td><td><b>Innovation Funnel Dashboard</b> — developed and supported</td></tr>
+    <tr><td class="p mono">Feb – Oct 2022</td><td><b>Activity Based Costing Dashboard</b> — developed</td></tr>
+    <tr><td class="p mono">Feb – Mar 2022</td><td><b>DBS Archiving Phase 2</b> — data warehouse archiving</td></tr>
+  </table>
+  <p class="grp mono">PT Tunas Dwipa Matra</p>
+  <table class="cp">
+    <tr><td class="p mono">Apr – Jul 2021</td><td><b>Customer Profile and Repeat Order Dashboard</b> — Power BI and Tableau</td></tr>
+  </table>
   </div>
 </section>
 
