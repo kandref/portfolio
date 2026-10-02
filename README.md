@@ -33,3 +33,7 @@ npm run build
 ## Author
 
 Kurnia Andre Febrian — [LinkedIn](https://www.linkedin.com/in/kurniaandref6/) · [GitHub](https://github.com/kandref)
+
+## CV
+
+`public/cv-kurnia-andre-febrian.pdf` is printed from `cv/cv.html` (A4, Chromium print). Edit the HTML, then re-print it with Playwright `page.pdf({ format: "A4", preferCSSPageSize: true })`.

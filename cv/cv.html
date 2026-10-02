@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CV — Kurnia Andre Febrian</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 16mm 16mm 15mm; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Archivo", Arial, sans-serif; font-size: 9.6pt; line-height: 1.42; color: #141414; }
+  .mono { font-family: "IBM Plex Mono", Consolas, monospace; }
+  a { color: inherit; text-decoration: none; }
+  header { border-bottom: 1.5pt solid #141414; padding-bottom: 9pt; margin-bottom: 4pt; }
+  h1 { font-size: 25pt; line-height: 1; letter-spacing: 0; word-spacing: 0.05em; margin: 0 0 5pt; font-weight: 700; }
+  .role { font-size: 11pt; font-weight: 500; margin: 0 0 6pt; }
+  .contact { font-size: 8.6pt; color: #3d3d3a; }
+  .contact span { white-space: nowrap; }
+  .contact span + span::before { content: "  ·  "; color: #9a9a96; }
+  section { display: grid; grid-template-columns: 30mm 1fr; column-gap: 6mm; border-top: 0.5pt solid #c9c9c5; padding: 8pt 0 6pt; }
+  header + section { border-top: 0; }
+  h2 { margin: 0; font-size: 8pt; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #d4271d; }
+  .item { break-inside: avoid; margin-bottom: 7pt; }
+  .item:last-child { margin-bottom: 0; }
+  .head { display: flex; justify-content: space-between; gap: 8pt; align-items: baseline; }
+  .head b { font-weight: 600; }
+  .date { font-size: 8.2pt; color: #555551; white-space: nowrap; }
+  .sub { color: #555551; }
+  ul { margin: 2pt 0 0; padding-left: 11pt; }
+  li { margin: 1.2pt 0; }
+  li::marker { color: #9a9a96; }
+  .stack { font-size: 7.8pt; color: #555551; }
+  p { margin: 0; }
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 1.6pt 0; vertical-align: top; }
+  td.y { width: 19mm; font-size: 8.2pt; color: #555551; }
+  td.by { text-align: right; color: #555551; white-space: nowrap; padding-left: 8pt; }
+  .skills td.k { width: 21mm; font-size: 8.2pt; color: #555551; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Kurnia Andre Febrian</h1>
+  <p class="role">Business Intelligence Developer</p>
+  <p class="contact">
+    <span>Indonesia</span><span>+62 812 7813 9229</span><span><a href="mailto:kurniaandre39@gmail.com">kurniaandre39@gmail.com</a></span><span><a href="https://www.linkedin.com/in/kurniaandref6/">linkedin.com/in/kurniaandref6</a></span><span><a href="https://github.com/kandref">github.com/kandref</a></span><span><a href="https://portfolio-kandref.vercel.app">portfolio-kandref.vercel.app</a></span>
+  </p>
+</header>
+
+<section>
+  <h2>Profile</h2>
+  <p>I build the reporting layer for a national retail company: Power BI models on top of BigQuery, the access rules around them, and the small cloud jobs that keep them running and delivered on time. Business intelligence since February 2022, with a physics degree behind it (theoretical physics, numerical methods).</p>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <div>
+    <div class="item">
+      <div class="head"><span><b>Business Intelligence Developer</b> · PT Eigerindo MPI</span><span class="date mono">Jun 2025 – present</span></div>
+      <ul>
+        <li>Build and maintain Power BI dashboards that regional and branch managers across Indonesia use for sales, store performance and incentive tracking.</li>
+        <li>Moved heavy retail models to DirectQuery on BigQuery. Row-level security reads one master access table, so changing who sees which region is a table update instead of a model edit.</li>
+        <li>Implemented Microsoft Fabric for ingestion, transformation and semantic models alongside the BigQuery warehouse.</li>
+        <li>Wrote a Cloud Run service that sizes the Fabric capacity on a schedule (smaller overnight, standard in working hours, larger on request), logs each change and emails a monthly summary of hours per size and estimated cost.</li>
+        <li>Automated recurring reports as scheduled Python jobs that query BigQuery, build the Excel file and email it; the daily sales report runs this way.</li>
+        <li>Moved 17 Power BI projects from manual backup folders into Git (PBIP/TMDL), with a standard repo layout, changelog and a tag for every published version.</li>
+        <li>Standardised visual templates so reports look and behave the same across regions.</li>
+      </ul>
+      <p class="stack mono">Power BI, DAX, Power Query, BigQuery SQL, Microsoft Fabric, Python, FastAPI, Cloud Run, Cloud Scheduler, Git, PowerShell</p>
+    </div>
+    <div class="item">
+      <div class="head"><span><b>Business Intelligence Developer</b> · PT Mitra Talenta Group (CELERATES)</span><span class="date mono">Feb 2022 – Jun 2025</span></div>
+      <ul>
+        <li>Built 3 Power BI dashboards and supported 2 more for client PT Mitra Solusi Telematika: Activity Based Costing, Innovation Funnel, KPI &amp; Incentive Funnel, Table of Duty.</li>
+        <li>Ran data warehouse batches in Pentaho Data Integration; DBS Archiving phase 2 (Feb – Mar 2022).</li>
+        <li>Handled data anomaly, discrepancy and enhancement tickets.</li>
+        <li>Mentored students in the Kampus Merdeka certified independent study programme, Data Analytics &amp; BI track (batch 4: 23 students; batch 7).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <div class="head"><span><b>Marketing Research &amp; Development</b> · PT Tunas Dwipa Matra</span><span class="date mono">Jan – Jul 2021</span></div>
+      <ul>
+        <li>Analysed the customer database (socio-economic status, occupation, income, age, city) with KNIME, Python and Excel.</li>
+        <li>Built Power BI and Tableau dashboards on customer profile and repeat orders.</li>
+        <li>Ran customer and competitor surveys; tracked commodity prices at farm and market level and macro indicators.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <div class="head"><span><b>Laboratory Assistant, Physics</b> · Institut Teknologi Sumatera</span><span class="date mono">Sep 2016 – May 2019</span></div>
+      <ul>
+        <li>Ran physics practicum sessions with lecturers, maintained lab equipment and reported on student progress.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="item">
+    <div class="head"><span><b>Institut Teknologi Sumatera (ITERA)</b> · B.Sc. Physics</span><span class="date mono">Aug 2015 – Mar 2020</span></div>
+    <p class="sub">Theoretical Physics group, mathematical and computational physics. Thesis: traffic dynamics interaction analysis.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <table class="skills">
+    <tr><td class="k mono">Reporting</td><td>Power BI (DAX, Power Query, dynamic RLS, PBIP), Looker Studio, Tableau, Excel</td></tr>
+    <tr><td class="k mono">Data</td><td>BigQuery SQL, PostgreSQL, SQL Server, MySQL, Pentaho Data Integration, KNIME</td></tr>
+    <tr><td class="k mono">Platform</td><td>Microsoft Fabric, Google Cloud Run, Cloud Scheduler, Vercel</td></tr>
+    <tr><td class="k mono">Code</td><td>Python (pandas, scikit-learn), R, TypeScript / Next.js, PowerShell, Git</td></tr>
+    <tr><td class="k mono">Other</td><td>SPSS, Matlab, Scilab, C++</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <table>
+    <tr><td class="y mono">2026</td><td><b>retail-dashboard</b> — web retail KPI dashboard (Next.js, TypeScript, Recharts, NextAuth)</td></tr>
+    <tr><td class="y mono">2026</td><td><b>jakarta-traffic-congestion-analysis</b> — peak-hour corridor speeds from Jakarta open data (Python)</td></tr>
+    <tr><td class="y mono">2026</td><td><b>original_reproduction / enhanced_simulation</b> — thesis traffic model ported from Scilab to Python, finite-volume solver and Streamlit app</td></tr>
+    <tr><td class="y mono">2026</td><td><b>supply-chain-research</b> — production-flow bottlenecks with the ADR conservation-law model and Monte Carlo (Python)</td></tr>
+    <tr><td class="y mono">2026</td><td><b>artemis-ii-analysis</b> — Artemis II trajectory from NASA JPL Horizons ephemeris (Python)</td></tr>
+    <tr><td class="y mono">2026</td><td><b>cashora</b> — personal finance Telegram bot synced to Google Sheets and Looker Studio (Python)</td></tr>
+    <tr><td class="y mono">2023</td><td><b>Market Share Dashboard</b> — final project, PROA Business Intelligence Analyst (Power BI)</td></tr>
+    <tr><td class="y mono">2021</td><td><b>Credit card customer segmentation</b> and clustering lab challenge — Shift Academy (Python)</td></tr>
+    <tr><td class="y mono">2020</td><td><b>Trip Advisor sentiment analysis</b> (TF-IDF, LSTM) and <b>Toronto Bikeshare analysis</b> — FGA Kominfo × STEI ITB</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Teaching</h2>
+  <table>
+    <tr><td class="y mono">Sep 2024</td><td>Data Analytics untuk Efisiensi dan Inovasi Bisnis — Studium Generale, Fisika ITERA</td></tr>
+    <tr><td class="y mono">Jul 2023</td><td>Building Captivating Interactive Reports with Power BI — Celerates School</td></tr>
+    <tr><td class="y mono">May 2023</td><td>Future Business Intelligence for the Mining Industry — Sains Data, ITERA</td></tr>
+    <tr><td class="y mono">2023–24</td><td>Mentor, Data Analytics &amp; BI track, Kampus Merdeka batches 4 and 7 — CELERATES</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Courses</h2>
+  <table>
+    <tr><td class="y mono">2023</td><td>PROA Business Intelligence Analyst</td><td class="by">Kominfo × Binar Academy</td></tr>
+    <tr><td class="y mono">2022</td><td>SQL</td><td class="by">Progate</td></tr>
+    <tr><td class="y mono">2021</td><td>Belajar Machine Learning dan Visualisasi Data</td><td class="by">Dicoding</td></tr>
+    <tr><td class="y mono">2020</td><td>FGA Data Science</td><td class="by">Kominfo × STEI ITB</td></tr>
+    <tr><td class="y mono">2020–21</td><td>Data Analyst Track</td><td class="by">DQLab</td></tr>
+  </table>
+</section>
+</body>
+</html>
